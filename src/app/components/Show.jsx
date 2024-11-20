@@ -1,9 +1,5 @@
-import React from 'react'
+const Show = ({ when, children }) => {
+  return when ? children : null;
+};
 
-const Show = () => {
-  return (
-    <div>Show</div>
-  )
-}
-
-export default Show
+export default Show;

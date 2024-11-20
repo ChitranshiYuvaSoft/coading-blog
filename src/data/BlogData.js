@@ -7,7 +7,9 @@ export const reactBlog = [
     date: "2024-11-18",
     description:
       "State management in React is one of the core concepts every developer must understand. It allows components to manage their dynamic data efficiently. In this blog, we will explore React's built-in `useState` and `useReducer` hooks, as well as external libraries like Redux and Zustand. By the end, you'll know how to decide between local state and global state for your application, and understand advanced concepts like React Context for passing data down the component tree without prop drilling.",
+      details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates aliquid eveniet excepturi labore et tenetur accusamus incidunt nesciunt voluptas ipsa ut nostrum, sit repudiandae ipsum, exercitationem doloremque qui dolores! Cum earum sequi molestias fugiat necessitatibus delectus, in voluptates quod ipsam aperiam quasi nesciunt voluptatem. Tenetur quis id ea dignissimos corrupti corporis enim eius est adipisci. Sunt accusantium hic quas vitae."
   },
+  
   {
     id: 2,
     img: "/React/react2.webp",
@@ -16,6 +18,7 @@ export const reactBlog = [
     date: "2024-11-17",
     description:
       "React's component lifecycle is pivotal in understanding how components are created, updated, and destroyed. In this blog, we take a deep dive into the lifecycle methods of class components, like `componentDidMount`, `shouldComponentUpdate`, and `componentWillUnmount`. Then, we explore how functional components achieve the same functionality using hooks like `useEffect`. Whether you're migrating from class-based to functional components or starting afresh, this blog provides detailed insights with examples.",
+      details: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates aliquid eveniet excepturi labore et tenetur accusamus incidunt nesciunt voluptas ipsa ut nostrum, sit repudiandae ipsum, exercitationem doloremque qui dolores! Cum earum sequi molestias fugiat necessitatibus delectus, in voluptates quod ipsam aperiam quasi nesciunt voluptatem. Tenetur quis id ea dignissimos corrupti corporis enim eius est adipisci. Sunt accusantium hic quas vitae."
   },
   {
     id: 3,
@@ -72,3 +75,5 @@ export const reactBlog = [
       "React Context is a powerful feature for managing global state without the need for external libraries. This blog explains how to create and use contexts effectively, covering topics like provider and consumer patterns, using hooks like `useContext`, and avoiding unnecessary re-renders. We’ll also discuss when to use Context over alternatives like Redux. By the end, you’ll know how to manage state seamlessly in small to medium-sized applications.",
   },
 ];
+
+

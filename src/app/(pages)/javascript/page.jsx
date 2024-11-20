@@ -1,19 +1,16 @@
-"use client"
 import React from "react";
 import "../react/react.style.css";
 import { Blogs, reactBlog } from "@/data/BlogData";
-import { useRouter } from "next/navigation";
 
-const ReactBlog = () => {
-  const reactBlogs = reactBlog;
-  const router = useRouter();
+const JSBlog = () => {
+  const JavaScriptBlogs = reactBlog;
   return (
     <div className="w-full h-[auto] bg-slate-950 flex flex-col items-center justify-between py-2 ">
       <header className="header w-full h-[10%] px-3 py-4 shadow-lg shadow-slate-800">
-        <h3 className="text-slate-100 text-xl font-semibold">React JS</h3>
+        <h3 className="text-slate-100 text-xl font-semibold">Java Script</h3>
         <div className="w-full h-[80%] flex flex-col items-center justify-around ">
           <main className="w-[90%] h-[auto] flex items-center justify-around flex-col py-6">
-            {reactBlogs.map((blog, index) => (
+            {JavaScriptBlogs.map((blog, index) => (
               <section
                 key={blog.id}
                 className="w-[100%] h-[20rem] 2 mb-2 my-2  flex items-center justify-center py-5"
@@ -49,10 +46,7 @@ const ReactBlog = () => {
                         <span>{blog.description}</span>
                       </p>
                       <div className="w-full flex items-center justify-end">
-                        <button
-                          className="px-4 py-2 text-white bg-yellow-300"
-                          onClick={() => {router.push(`/react/${blog.id}`)}}
-                        >
+                        <button className="px-4 py-2 text-white bg-yellow-300">
                           More Details
                         </button>
                       </div>
@@ -102,4 +96,4 @@ const ReactBlog = () => {
   );
 };
 
-export default ReactBlog;
+export default JSBlog;

@@ -13,13 +13,14 @@
     "axios": "^1.7.7",
     "formik": "^2.4.6",
     "next": "15.0.3",
-    "npm-redux-toolkit-package": "^1.0.6",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
     "react-redux": "^9.1.2",
+    "redux-persist": "^6.0.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@types/redux-persist": "^4.3.1",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "postcss": "^8",
