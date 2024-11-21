@@ -1,33 +1,35 @@
+"use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 import ThemeBtn from "./Button/ThemeBtn";
 import SearchBar from "./Button/SearchBar";
 
-const Navbar = () => {
+const Navbar = ({search, setSearch}) => {
   const token = localStorage.getItem("token");
   const router = useRouter();
+  console.log(setSearch); // Check if it's undefined or not
 
   const logout = () => {
     localStorage.clear("token");
     window.location.reload();
   };
   return (
-    <nav className="w-full h-[10%] border-gray-200 dark:bg-gray-900 navbar mb-4 px-4">
+    <nav className="w-full  h-[4.5rem] bg-slate-950 dark:bg-gray-900 navbar px-4">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
         <span className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img
+          {/* <img
             src="https://flowbite.com/docs/images/logo.svg"
             className="h-8"
             alt="Flowbite Logo"
-          />
+          /> */}
           <span className="self-center text-xl font-semibold whitespace-nowrap text-white dark:text-white">
             CodeBlog
           </span>
         </span>
         <div className="w-[auto] flex items-center md:order-2 md:space-x-0 rtl:space-x-reverse justify-around">
           <span className="w-[auto] h-[2rem] flex items-center justify-center">
-            <SearchBar />
+            <SearchBar search={search} setSearch={setSearch}/>
           </span>
 
           {token ? (

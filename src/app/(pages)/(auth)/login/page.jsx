@@ -1,4 +1,5 @@
 "use client";
+import BackBtn from "@/app/components/Button/BackBtn";
 import { getLoginUser } from "@/app/redux/auth/authSlice";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import Link from "next/link";
@@ -40,6 +41,7 @@ const Login = () => {
     <div className="w-full h-[100vh] bg-slate-950 flex items-center justify-center">
       <div className="w-[60%] flex flex-col items-center justify-center h-screen">
         <div className="w-[40%] h-[auto] max-w-md bg-slate-300 rounded-lg shadow-md p-6 flex flex-col items-start">
+          <BackBtn Location={'/'}/>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Login</h2>
 
           <Formik
@@ -87,10 +89,10 @@ const Login = () => {
                 <p className="text-gray-900 text-xs">
                   You have already account?{" "}
                   <Link
-                    href={"/login"}
+                    href={"/register"}
                     className="text-blue-500 hover:underline text-xs font-bold"
                   >
-                    SignIn
+                    Sign Up
                   </Link>
                 </p>
 

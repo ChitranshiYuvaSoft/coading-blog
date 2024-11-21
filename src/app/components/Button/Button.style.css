@@ -281,3 +281,52 @@ input:-webkit-autofill:active {
 .has_liked:hover {
   animation: has-liked-sleeves var(--duration) var(--ease) forwards;
 }
+
+
+
+/* Back Btn */
+.back-btn {
+  display: flex;
+  height: 2rem;
+  width: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee4b;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border: none;
+  /* background: #fff; */
+ }
+ 
+ .back-btn> svg {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 1.2rem;
+  transition: all 0.4s ease-in;
+ }
+ 
+ .back-btn:hover > svg {
+  font-size: 1.2em;
+  transform: translateX(-5px);
+ }
+ 
+ .back-btn:hover {
+  box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+  transform: translateY(-2px);
+ }
+
+
+ /* For My Like Logic */
+ .action_has {
+  transition: color 0.3s ease;
+}
+
+.action_has.text-white {
+  color: white;
+}
+
+.action_has.text-red-500 {
+  color: red;
+}

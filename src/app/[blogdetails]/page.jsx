@@ -5,34 +5,31 @@ import { useSelector } from "react-redux";
 import FunButton from "../components/Button/FunButton";
 import { iconFun } from "@/data/BlogData";
 import ShowComment from "../components/Comment/ShowComment";
-
+import ShareCard from "../components/Card/ShareCard";
 
 const page = () => {
   const [commentShow, setCommentShow] = useState(false);
-  console.log(commentShow);
+  const [like, setLike] = useState(false);
+  const [showShareModal, setShowShareModal] = useState(false);
 
-  const handleComment = (item) => {
-    if (item.name == "comment") {
-      if (commentShow) {
-        setCommentShow(false);
-      } else {
-        setCommentShow(true);
-      }
-    } else if (item.name == "like") {
-      alert("like");
-    } else if (item.name == "share") {
-      alert("share");
+  const handleAction = (item) => {
+    if (item.name === "comment") {
+      setCommentShow(!commentShow);
+    } else if (item.name === "like") {
+      setLike(!like);
+    } else if (item.name === "share") {
+      setShowShareModal(!showShareModal);
     }
   };
 
   const { blogDetails } = useSelector((state) => state.blog);
-  console.log(blogDetails);
+
   return (
     <div className="home w-full h-[auto] bg-slate-950 flex items-center justify-center flex-col">
-      <Header />
+      <Header title={blogDetails.title} />
       <div className="w-full h-[auto] flex items-center justify-center">
         <div className="w-[55%] h-[auto] flex items-center justify-center flex-col">
-          <div className="w-full h-[25rem] flex items-center justify-center ">
+          <div className="w-full h-[25rem] flex items-center justify-center">
             <img
               src={blogDetails.img || "/React/react1.png"}
               alt="noBlogImg"
@@ -43,7 +40,7 @@ const page = () => {
             <p className="text-3xl text-yellow-700 font-bold my-1">
               {blogDetails.title}
             </p>
-            <p className="text-xl text-slate- 500 font-bold my-1">
+            <p className="text-xl text-slate-500 font-bold my-1">
               {blogDetails.author}
             </p>
             <p className="text-md text-slate-600 font-bold my-1">
@@ -59,7 +56,11 @@ const page = () => {
                 className="w-[32.5%] h-[8rem] flex items-center justify-between bg-white"
                 key={index}
               >
-                <img src={blogImg || "No Img"} alt="noImg" className="w-full h-full" />
+                <img
+                  src={blogImg || "No Img"}
+                  alt="noImg"
+                  className="w-full h-full"
+                />
               </div>
             ))}
           </div>
@@ -72,7 +73,9 @@ const page = () => {
                 <FunButton
                   item={item}
                   key={index}
-                  handleComment={handleComment}
+                  like={like}
+                  commentShow={commentShow}
+                  handleAction={handleAction}
                 />
               ))}
             </span>
@@ -80,10 +83,13 @@ const page = () => {
         </div>
       </div>
 
-      {commentShow ? (
-        <ShowComment comments={blogDetails.comments} />
-      ) : (
-        <div> No Comment Yet!!</div>
+      {commentShow && <ShowComment comments={blogDetails.comments} />}
+
+      {showShareModal && (
+        <ShareCard
+          onClose={() => setShowShareModal(false)}
+          position="bottom"
+        />
       )}
     </div>
   );

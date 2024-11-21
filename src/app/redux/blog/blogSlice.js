@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const blogSlice = createSlice({
   name: "blog",
   initialState: {
-    allBlog: reactBlog,
+    allBlogs: reactBlog,
     blogDetails: {},
     likeBlog: [],
     isLoading: false,
@@ -14,18 +14,23 @@ const blogSlice = createSlice({
   },
   reducers: {
     getSingleBlog: (state, action) => {
-        console.log(action.payload)
+      console.log(action.payload);
       return {
+        ...state,
         blogDetails: action.payload,
       };
     },
-    addLikeBlog: (state,action) => {
-      return {
 
-      }
-    }
+    // Create Blog
+    createBlog: (state, action) => {
+      console.log(action.payload);
+      return {
+        ...state,
+        allBlogs: [...state.allBlogs, action.payload],
+      };
+    },
   },
   extraReducers: (builder) => {},
 });
-export const {getSingleBlog, addLikeBlog} = blogSlice.actions
+export const { getSingleBlog,  createBlog} = blogSlice.actions;
 export default blogSlice.reducer;

@@ -1,6 +1,9 @@
 import React from "react";
 
-const SearchBar = () => {
+const SearchBar = ({search, setSearch}) => {
+
+  console.log(setSearch); // Check if it's undefined or not
+
   return (
     <form className="form mr-4">
       <label htmlFor="search">
@@ -10,6 +13,9 @@ const SearchBar = () => {
           required=""
           placeholder="Search twitter"
           id="search"
+          value={search}
+          name="search"
+          onChange={(e) => setSearch(e.target.value)}
         />
         <div className="fancy-bg"></div>
         <div className="search">
